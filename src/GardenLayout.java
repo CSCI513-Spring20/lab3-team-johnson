@@ -18,8 +18,9 @@ public class GardenLayout extends Application
 	@Override
 	public void start(Stage gardenStage) throws Exception 
 	{
-		gardenStage
-		
+		gardenStage.setScene(scene);
+		gardenStage.setTitle("Garden Layout");
+		gardenStage.show();
 	}
 	
 	public static void main(String args[])
