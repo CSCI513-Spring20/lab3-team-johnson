@@ -1,5 +1,9 @@
+import javafx.geometry.Point2D;
 
 public abstract class GardenComponent {
+	Point2D position;
+	int size;
+	Object obj;
 	
 	public void add(GardenComponent gc)
 	{
@@ -12,6 +16,11 @@ public abstract class GardenComponent {
 	}
 	
 	public GardenComponent getChild(int i)
+	{
+		throw new UnsupportedOperationException();
+	}
+	
+	public void move(double x, double y)
 	{
 		throw new UnsupportedOperationException();
 	}

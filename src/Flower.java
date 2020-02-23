@@ -1,25 +1,33 @@
-import java.awt.Point;
+import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class Flower extends GardenComponent{
-	Point flowerPosition;
+	Point2D flowerPosition;
 	Color flowerColor;
 	boolean moveable;
 	Circle flower;
 	
-	public Flower(Point p, Color c, boolean move)
+	public Flower(Point2D p, Color c, boolean move)
 	{
-		flowerPosition = p;
+		position = p;
 		flowerColor = c;
 		moveable = move;
+		size = 10;
 		flower = new Circle();
-		flower.setCenterX(flowerPosition.x);
-		flower.setCenterY(flowerPosition.y);
-		flower.setRadius(5);
+		flower.setCenterX(p.getX());
+		flower.setCenterY(p.getY());
+		flower.setRadius(size);
 		flower.setFill(flowerColor);
 		flower.setStroke(Color.BLACK);
 		flower.setStrokeWidth(1);
+		obj = flower;
+	}
+	
+	public void move(double x, double y)
+	{	
+		flower.setCenterX(x);
+		flower.setCenterY(y);
 	}
 
 }
