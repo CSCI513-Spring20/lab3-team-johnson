@@ -1,3 +1,5 @@
+import java.awt.Point;
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -14,6 +16,8 @@ public class GardenLayout extends Application
 {
 	AnchorPane myPane = new AnchorPane();
 	Scene scene = new Scene(myPane, 50*10, 50*10);
+	Point p = new Point(10, 10);
+	Flower redFlower = new Flower(p, Color.DARKRED, false);
 
 	@Override
 	public void start(Stage gardenStage) throws Exception 
@@ -21,6 +25,7 @@ public class GardenLayout extends Application
 		gardenStage.setScene(scene);
 		gardenStage.setTitle("Garden Layout");
 		gardenStage.show();
+		myPane.getChildren().add(redFlower.flower);
 	}
 	
 	public static void main(String args[])
